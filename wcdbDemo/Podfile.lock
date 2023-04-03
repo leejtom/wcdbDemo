@@ -1,0 +1,23 @@
+PODS:
+  - WCDB.swift (2.0.0):
+    - WCDB.swift/no-arc (= 2.0.0)
+    - WCDBOptimizedSQLCipher (~> 1.4.0)
+  - WCDB.swift/no-arc (2.0.0):
+    - WCDBOptimizedSQLCipher (~> 1.4.0)
+  - WCDBOptimizedSQLCipher (1.4.0)
+
+DEPENDENCIES:
+  - WCDB.swift
+
+SPEC REPOS:
+  trunk:
+    - WCDB.swift
+    - WCDBOptimizedSQLCipher
+
+SPEC CHECKSUMS:
+  WCDB.swift: 1532be19a7e8baa62aad26fbc1b568173462c646
+  WCDBOptimizedSQLCipher: 55124a19f70180eb38163c959dd56695b8af8b60
+
+PODFILE CHECKSUM: 16f153c9709c1defd89c11e20e86b4439b904596
+
+COCOAPODS: 1.11.3
