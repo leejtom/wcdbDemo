@@ -6,5 +6,6 @@ target 'wcdbDemo' do
   use_frameworks!
 
   # Pods for wcdbDemo
-pod 'WCDB.swift'
+pod 'WCDB.swift', '2.0.0'
+
 end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B34C4B29E3E3DD00124C58 /* WCDBOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B34C4A29E3E3DD00124C58 /* WCDBOperator.swift */; };
 		55C3B27929DB293100095AD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B27829DB293100095AD8 /* AppDelegate.swift */; };
 		55C3B27B29DB293100095AD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B27A29DB293100095AD8 /* SceneDelegate.swift */; };
 		55C3B27D29DB293100095AD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B27C29DB293100095AD8 /* ViewController.swift */; };
@@ -14,11 +15,11 @@
 		55C3B28229DB293300095AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C3B28129DB293300095AD8 /* Assets.xcassets */; };
 		55C3B28529DB293300095AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C3B28329DB293300095AD8 /* LaunchScreen.storyboard */; };
 		55C3B28D29DB2A8000095AD8 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B28C29DB2A8000095AD8 /* Sample.swift */; };
-		55C3B28F29DB2E5A00095AD8 /* WCDBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B28E29DB2E5A00095AD8 /* WCDBUtil.swift */; };
 		60595FAE03F36C6BD5EE0BA0 /* Pods_wcdbDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F565A29F422FBE3523654DC /* Pods_wcdbDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18B34C4A29E3E3DD00124C58 /* WCDBOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDBOperator.swift; sourceTree = "<group>"; };
 		3FB94773D5FB9EEDE0F7BD92 /* Pods-wcdbDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wcdbDemo.release.xcconfig"; path = "Target Support Files/Pods-wcdbDemo/Pods-wcdbDemo.release.xcconfig"; sourceTree = "<group>"; };
 		55C3B27529DB293100095AD8 /* wcdbDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wcdbDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C3B27829DB293100095AD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		55C3B28429DB293300095AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55C3B28629DB293300095AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C3B28C29DB2A8000095AD8 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
-		55C3B28E29DB2E5A00095AD8 /* WCDBUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDBUtil.swift; sourceTree = "<group>"; };
 		881DBB40C75575292106B52E /* Pods-wcdbDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wcdbDemo.debug.xcconfig"; path = "Target Support Files/Pods-wcdbDemo/Pods-wcdbDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9F565A29F422FBE3523654DC /* Pods_wcdbDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wcdbDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -46,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B34C4529E3BD2700124C58 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				55C3B28C29DB2A8000095AD8 /* Sample.swift */,
+				18B34C4A29E3E3DD00124C58 /* WCDBOperator.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		31B896905A4762BCA0E60C67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +84,7 @@
 		55C3B27729DB293100095AD8 /* wcdbDemo */ = {
 			isa = PBXGroup;
 			children = (
+				18B34C4529E3BD2700124C58 /* DB */,
 				55C3B27829DB293100095AD8 /* AppDelegate.swift */,
 				55C3B27A29DB293100095AD8 /* SceneDelegate.swift */,
 				55C3B27C29DB293100095AD8 /* ViewController.swift */,
@@ -82,8 +92,6 @@
 				55C3B28129DB293300095AD8 /* Assets.xcassets */,
 				55C3B28329DB293300095AD8 /* LaunchScreen.storyboard */,
 				55C3B28629DB293300095AD8 /* Info.plist */,
-				55C3B28C29DB2A8000095AD8 /* Sample.swift */,
-				55C3B28E29DB2E5A00095AD8 /* WCDBUtil.swift */,
 			);
 			path = wcdbDemo;
 			sourceTree = "<group>";
@@ -212,10 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B34C4B29E3E3DD00124C58 /* WCDBOperator.swift in Sources */,
 				55C3B27D29DB293100095AD8 /* ViewController.swift in Sources */,
 				55C3B28D29DB2A8000095AD8 /* Sample.swift in Sources */,
 				55C3B27929DB293100095AD8 /* AppDelegate.swift in Sources */,
-				55C3B28F29DB2E5A00095AD8 /* WCDBUtil.swift in Sources */,
 				55C3B27B29DB293100095AD8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +372,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X94Z28FLGK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wcdbDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -371,12 +380,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = leejtom.wcdbDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyooh.qdyy1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -392,6 +402,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X94Z28FLGK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wcdbDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,12 +410,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = leejtom.wcdbDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyooh.qdyy1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
