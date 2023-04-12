@@ -10,12 +10,14 @@ import WCDBSwift
 final class Sample: TableCodable {
     var identifier: Int = 0
     var description: String? = nil
+    var age: Int = 0
     
     enum CodingKeys: String, CodingTableKey {
         typealias Root = Sample
         
         case identifier
         case description
+        case age
         
         static let objectRelationalMapping = TableBinding(CodingKeys.self) {
             BindColumnConstraint(identifier, isPrimary: true) // 设为主键

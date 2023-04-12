@@ -8,18 +8,18 @@
 import Foundation
 import WCDBSwift
 
-struct WCDBBasePath {
-    static let basePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/DB/WCDB.db"
+public struct WCDBBasePath {
+    static let basePath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/DB/WCDB.db"
 }
 
 class WCDBOperator: NSObject {
-    static let share = WCDBOperator.init()
-    let dataBasePath = WCDBBasePath.basePath
+    var dataBasePath: String
     var db: Database?
     
-    override init() {
+    public init(basePath: String) {
+        self.dataBasePath = basePath
         super.init()
-        db = createDB(path: WCDBBasePath.basePath)
+        db = self.createDB(path: basePath)
     }
     
     /// 创建数据库
@@ -41,7 +41,7 @@ class WCDBOperator: NSObject {
     /// 插入数据
     func inset<T: TableEncodable>(objects: [T], tableName: String) {
         do {
-            try db?.insertOrReplace(objects, intoTable: tableName)
+            try db?.insert(objects, intoTable: tableName)
         } catch let error {
             debugPrint("insert objects error \(error.localizedDescription)")
         }

@@ -13,8 +13,13 @@ enum DBTableName : String {
 
 class ViewController: UIViewController {
     
+    var db: WCDBOperator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 创建数据库
+        db = WCDBOperator(basePath: WCDBBasePath.basePath)
+        // 创建表
         self.createTable()
         
         let inserButton = UIButton.init(frame: CGRect(origin: CGPoint.init(x: 100, y: 100), size: CGSize.init(width: 100, height: 30)))
@@ -40,73 +45,72 @@ class ViewController: UIViewController {
         queryButton.setTitleColor(.black, for: .normal)
         queryButton.addTarget(self, action: #selector(query), for: .touchUpInside)
         self.view.addSubview(queryButton)
-        
-        
-        //        var dataArray =  query()
-        //        dataArray?.forEach({ (data) in
-        //            print(data.identifier, data.description ?? "")
-        //        })
-        //
-        //        inser()
-        //
-        //        dataArray =  query()
-        //        dataArray?.forEach({ (data) in
-        //            print(data.identifier, data.description ?? "")
-        //        })
-        //
-        //        update()
-        //
-        //        dataArray =  query()
-        //        dataArray?.forEach({ (data) in
-        //            print(data.identifier, data.description ?? "")
-        //        })
-        
-        //        delete()
-        //
-        //        dataArray =  query()
-        //        dataArray?.forEach({ (data) in
-        //            print(data.identifier, data.description ?? "")
-        //        })
     }
     
     private func createTable() {
         print("---createTable----")
-        WCDBOperator.share.createTable(DBTableName.sampleTable.rawValue, type: Sample.self)
+        db?.createTable(DBTableName.sampleTable.rawValue, type: Sample.self)
     }
     
     // 插入
     @objc private func inser() {
         print("---inser----")
-        let model1 = Sample()
-        model1.description = "inser \(Date.timeIntervalBetween1970AndReferenceDate)"
+        var milliStamp = Date().milliStamp
+        let model = Sample()
+        model.identifier = Int(milliStamp)!
+        model.age = Int(milliStamp)!
+        model.description = "inser \(milliStamp)"
         
-        WCDBOperator.share.inset(objects: [model1], tableName: DBTableName.sampleTable.rawValue)
+        milliStamp = Date().milliStamp
+        let model2 = Sample()
+        model2.identifier = Int(milliStamp)!
+        model2.age = Int(milliStamp)!
+        model2.description = "inser\(milliStamp)"
+        
+        db?.inset(objects: [model, model2], tableName: DBTableName.sampleTable.rawValue)
     }
     
     // 修改
     @objc private func update() {
         print("---update----")
         let model1 = Sample.init()
-        model1.description = "1update \(Date.timeIntervalBetween1970AndReferenceDate)"
-        WCDBOperator.share.update(DBTableName.sampleTable.rawValue, on: [Sample.Properties.description], with: model1)
+        model1.description = "update\(Date().milliStamp)"
+        db?.update(DBTableName.sampleTable.rawValue, on: [Sample.Properties.description], with: model1, where: Sample.Properties.identifier.intValue == 1681308965225)
     }
     
     // 查找
     @objc private func query() {
         print("---query----")
-        let dataArray:[Sample] = WCDBOperator.share.query(DBTableName.sampleTable.rawValue) ?? [Sample()]
+        let dataArray:[Sample] = db?.query(DBTableName.sampleTable.rawValue) ?? [Sample()]
         dataArray.forEach({ (data) in
-            print(data.identifier, data.description ?? "", data.lastInsertedRowID)
+            print(data.identifier, data.description ?? "", data.age)
         })
     }
     
     // 删除
     @objc private func deleteAction() {
         print("---delete----")
-        WCDBOperator.share.delete(DBTableName.sampleTable.rawValue)
+        db?.delete(DBTableName.sampleTable.rawValue)
     }
     
     
 }
 
+
+extension Date {
+
+  /// 获取当前 秒级 时间戳 - 10位
+  var timeStamp : String {
+    let timeInterval: TimeInterval = self.timeIntervalSince1970
+    let timeStamp = Int(timeInterval)
+    return "\(timeStamp)"
+  }
+
+  /// 获取当前 毫秒级 时间戳 - 13位
+  var milliStamp : String {
+    let timeInterval: TimeInterval = self.timeIntervalSince1970
+    let millisecond = CLongLong(round(timeInterval*1000))
+    return "\(millisecond)"
+  }
+}
 
