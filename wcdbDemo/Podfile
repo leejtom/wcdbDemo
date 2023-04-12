@@ -3,7 +3,7 @@
 
 target 'wcdbDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+use_frameworks! :linkage => :static # 使用静态链接
 
   # Pods for wcdbDemo
 pod 'WCDB.swift', '2.0.0'
