@@ -45,6 +45,16 @@ class ViewController: UIViewController {
         queryButton.setTitleColor(.black, for: .normal)
         queryButton.addTarget(self, action: #selector(query), for: .touchUpInside)
         self.view.addSubview(queryButton)
+        
+        let models = [Sample(), Sample()]
+        if let model = models.first(where: {$0.description == "0"}) {
+            print(model.age)
+        }
+        
+//        if models.contains(where: { $0.description == "0"}) {
+//            print()
+//        }
+        
     }
     
     private func createTable() {
@@ -56,26 +66,26 @@ class ViewController: UIViewController {
     @objc private func inser() {
         print("---inser----")
         var milliStamp = Date().milliStamp
-        let model = Sample()
+        var model = Sample()
         model.identifier = Int(milliStamp)!
         model.age = Int(milliStamp)!
         model.description = "inser \(milliStamp)"
         
         milliStamp = Date().milliStamp
-        let model2 = Sample()
+        var model2 = Sample()
         model2.identifier = Int(milliStamp)!
         model2.age = Int(milliStamp)!
         model2.description = "inser\(milliStamp)"
-        
         db?.inset(objects: [model, model2], tableName: DBTableName.sampleTable.rawValue)
     }
     
     // 修改
     @objc private func update() {
         print("---update----")
-        let model1 = Sample.init()
+        var model1 = Sample()
         model1.description = "update\(Date().milliStamp)"
-        db?.update(DBTableName.sampleTable.rawValue, on: [Sample.Properties.description], with: model1, where: Sample.Properties.identifier.intValue == 1681308965225)
+        db?.update(DBTableName.sampleTable.rawValue, on: [Sample.Properties.description], with: model1,
+                   where: Sample.Properties.age > 1 && Sample.Properties.description.isNull())
     }
     
     // 查找

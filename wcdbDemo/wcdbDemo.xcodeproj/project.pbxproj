@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18B34C4B29E3E3DD00124C58 /* WCDBOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B34C4A29E3E3DD00124C58 /* WCDBOperator.swift */; };
+		18E4D2B329E7FF53003B2B04 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4D2B229E7FF53003B2B04 /* Master.swift */; };
 		55C3B27929DB293100095AD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B27829DB293100095AD8 /* AppDelegate.swift */; };
 		55C3B27B29DB293100095AD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B27A29DB293100095AD8 /* SceneDelegate.swift */; };
 		55C3B27D29DB293100095AD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C3B27C29DB293100095AD8 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		18B34C4A29E3E3DD00124C58 /* WCDBOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDBOperator.swift; sourceTree = "<group>"; };
+		18E4D2B229E7FF53003B2B04 /* Master.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		3FB94773D5FB9EEDE0F7BD92 /* Pods-wcdbDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wcdbDemo.release.xcconfig"; path = "Target Support Files/Pods-wcdbDemo/Pods-wcdbDemo.release.xcconfig"; sourceTree = "<group>"; };
 		55C3B27529DB293100095AD8 /* wcdbDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wcdbDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C3B27829DB293100095AD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				55C3B28C29DB2A8000095AD8 /* Sample.swift */,
+				18E4D2B229E7FF53003B2B04 /* Master.swift */,
 				18B34C4A29E3E3DD00124C58 /* WCDBOperator.swift */,
 			);
 			path = DB;
@@ -116,7 +119,6 @@
 				55C3B27129DB293100095AD8 /* Sources */,
 				55C3B27229DB293100095AD8 /* Frameworks */,
 				55C3B27329DB293100095AD8 /* Resources */,
-				3DADE3CA2CFFC357BD04F050 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -174,23 +176,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3DADE3CA2CFFC357BD04F050 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-wcdbDemo/Pods-wcdbDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-wcdbDemo/Pods-wcdbDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wcdbDemo/Pods-wcdbDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4FF04785A8528A724B1F2F9A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +208,7 @@
 				18B34C4B29E3E3DD00124C58 /* WCDBOperator.swift in Sources */,
 				55C3B27D29DB293100095AD8 /* ViewController.swift in Sources */,
 				55C3B28D29DB2A8000095AD8 /* Sample.swift in Sources */,
+				18E4D2B329E7FF53003B2B04 /* Master.swift in Sources */,
 				55C3B27929DB293100095AD8 /* AppDelegate.swift in Sources */,
 				55C3B27B29DB293100095AD8 /* SceneDelegate.swift in Sources */,
 			);
